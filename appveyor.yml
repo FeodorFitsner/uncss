@@ -7,11 +7,12 @@ init:
 
 environment:
   matrix:
-    - nodejs_version: 0.10.29
+    - nodejs_version: 0.10.35
     - nodejs_version: 0.11
 
 install:
-  - ps: Install-Product node $env:nodejs_version
+#  - ps: Install-Product node $env:nodejs_version
+  - ps: Update-NodeJsInstallation $env:nodejs_version
   - npm install -g grunt-cli
   - npm install
 
